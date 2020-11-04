@@ -36,7 +36,15 @@ public class MainFragment extends Fragment {
         btnRed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-navController.navigate(R.id.action_mainFragment_to_redFragment);
+                Bundle bundle = new Bundle();
+                bundle.putString("PRUEBA", "Holass");
+              MainFragmentDirections.ActionMainFragmentToRedFragment action =
+                      MainFragmentDirections.actionMainFragmentToRedFragment();
+                action.setMiValor(99999);
+              navController.navigate(action);
+                //  navController.navigate(R.id.action_mainFragment_to_redFragment, bundle);
+
+
             }
         });
         btnBlue.setOnClickListener(new View.OnClickListener() {

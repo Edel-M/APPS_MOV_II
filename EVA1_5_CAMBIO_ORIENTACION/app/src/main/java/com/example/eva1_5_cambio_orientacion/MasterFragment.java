@@ -17,24 +17,24 @@ import android.widget.LinearLayout;
  * create an instance of this fragment.
  */
 public class MasterFragment extends Fragment {
-MainActivity main;
+    MainActivity main;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        main = (MainActivity)getActivity();
+        main = (MainActivity) getActivity();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        LinearLayout linearLayout = (LinearLayout)inflater.inflate(R.layout.fragment_master, container, false);
+        LinearLayout linearLayout = (LinearLayout) inflater.inflate(R.layout.fragment_master, container, false);
         Button btnDetail = linearLayout.findViewById(R.id.btnDetail);
         btnDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-main.onMessageFromFragmentToMain();
+                main.onMessageFromFragmentToMain();
 
             }
         });

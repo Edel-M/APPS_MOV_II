@@ -2,24 +2,40 @@ package com.example.eva1_6_navigation;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RedFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class RedFragment extends Fragment {
 
+String sCade = "";
+int iVal = 0;
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+      //  sCade = getArguments().getString("PRUEBA");
+        iVal = RedFragmentArgs.fromBundle(getArguments()).getMiValor();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_red, container, false);
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        TextView txtVwDatos = view.findViewById(R.id.txtVwDatos);
+       // txtVwDatos.setText(sCade);
+        txtVwDatos.setText(iVal + "");
     }
 }

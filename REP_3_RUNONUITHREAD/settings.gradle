@@ -1,2 +1,0 @@
-include ':app'
-rootProject.name = "REP_3_RUNONUITHREAD"
